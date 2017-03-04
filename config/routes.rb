@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   #get the stuff
   post '/trips/' => 'trip#create'
   get  '/trips/' => 'trip#get'
-  get  'trips/find'  => 'trip#find'
+  get  '/trips/find'  => 'trip#find'
+  get  '/trips/:trip_id' => 'trip#get_one'
   put '/trips/' => 'trip#put'
 
   post '/trips/:trip_id/participants/' => 'trip#add_participants'

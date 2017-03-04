@@ -32,6 +32,16 @@ class TripController < ApplicationController
     end
   end
 
+  def get_one
+    trip = Trip.find(params[:trip_id])
+
+    if trip
+      return render json: {result: trip, count: 1}, status: 200
+    else
+      return render json: {message: "Error saving"}, status: 400
+    end
+  end
+
   def find
     trip = Trip.find_by(name: params[:name])
 
