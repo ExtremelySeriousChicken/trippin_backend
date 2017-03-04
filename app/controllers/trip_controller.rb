@@ -55,7 +55,6 @@ class TripController < ApplicationController
   def put
   end
 
-
   def add_participants
     user = User.find(params[:user_id])
 
@@ -122,7 +121,8 @@ class TripController < ApplicationController
       name:       params[:name],
       location:   params[:location],
       start_time: params[:start_time],
-      end_time:   params[:end_time])
+      end_time:   params[:end_time]
+      category:   params[:category])
 
     if event.save
       return render json: {result: event, count: 1}, status: 200
