@@ -121,7 +121,7 @@ class TripController < ApplicationController
       name:       params[:name],
       location:   params[:location],
       start_time: params[:start_time],
-      end_time:   params[:end_time]
+      end_time:   params[:end_time],
       category:   params[:category])
 
     if event.save
